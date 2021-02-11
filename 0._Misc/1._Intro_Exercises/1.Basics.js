@@ -14,7 +14,7 @@ const lastName = "Latif";
 console.log("My first name is " + firstName + " and my last name is " + lastName);
 
 // String literal ``
-console.log(`My first name id ${firstName} and my last name is ${lastName}`);
+console.log(`My first name is ${firstName} and my last name is ${lastName}`);
 
 // --------------------------------------
 // Exercise 2 - Numbers and Strings

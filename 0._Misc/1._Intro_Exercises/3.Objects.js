@@ -6,21 +6,22 @@
 const myObj = {"message": "Hello, earthling! I bring peace."};
 
 // Log the message 
-console.log(myObj.message);
+console.log(myObj.message); // Bedste måde i javascript med dot notation
+console.log(myObj["message"]); // square bracket notation
 
 // --------------------------------------
 // Exercise 2 - Defining an object. 
 
 // Create an object that has your name and age. 
 
-const me = {firstName: 'Sebastian', lastName: 'Rasmussen'};
+const me = {firstName: 'Sebastian', age: 25};
 
-console.log(me.firstName + " " + me.lastName);
+console.log("My name is " + me.firstName + " and i'm " + me.age + " years old!");
 
 // --------------------------------------
 // Exercise 3 - Add a property 
 
-const stackOverflow = {me: 'Mig lel'};
+const stackOverflow = {};
 
 const isAllowed = true; 
 
