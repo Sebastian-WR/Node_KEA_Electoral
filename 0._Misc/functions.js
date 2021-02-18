@@ -62,3 +62,8 @@ interact(poke, "Christopher");
 // example: "lick " + name
  interact((name) => "Lick " + name, "Christopher"); // wowowowowoow men kun smart når det ikke er avanceret
 
+ let today = new Date();
+
+ const time = today.getHours().toFixed();
+
+ console.log(time);
