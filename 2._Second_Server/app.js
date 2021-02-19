@@ -32,7 +32,7 @@ const weekDays = {
     4: "Thursday",
     5: "Friday TGIF!",
     6: "Saturday",
-    7: "Sunday"
+    0: "Sunday"
 }
 // gets month from getmonth method that returns 0-11 based on the current month, then +1 and get the corresponding month from months obj
 const month = (months[today.getMonth() + 1]);
