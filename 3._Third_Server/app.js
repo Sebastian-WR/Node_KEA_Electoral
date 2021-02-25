@@ -5,7 +5,12 @@ const app = express();
 // today.toLocaleString([locales[, options]])
 // options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 // giver både dato og tid men jeg bruger den ikke, bare så man kan huske det
-/* const fullDAte = (today.toLocaleString('en-DK', { timeZone: 'UTC'})); */
+// const fullDAte = (today.toLocaleString('en-DK', { timeZone: 'UTC'})); 
+// disse metoder returnere en string med en representation af datoen og tiden så det er mere læsbart
+
+app.get("/", (req, res) => {
+    res.send("Hi and welcome to the time API! Here you can use the following calls -  /currentTime, to get the current time right now. /currentDay, to get the current date /currentMonth, to get the current month and /current, to get everything at once");
+});
 
 // Jeg har lavet 4 routes
 // GET på endpoint /currentTime bruger time variablen
@@ -44,5 +49,17 @@ app.get("/current", (req, res) => {
     res.send("Today is: " + day + " the " + dayDate + " of " + month + " and the time is: " + time);
 });
 
+app.get('/about', (req, res) => {
+    res.send({Version: "v1.0.2"}); // anders foretrækker json som dette tror jeg
+    // res.send("This is version v1.0.2 of my new time API!");
+});
+
+app.get("/page", (req, res) => {
+    res.send("<h1> Welcome </h1>"); // man kan skrive html
+    res.json("<h1> Welcome </h1>"); // sender tingene rent som json
+});
+
 // Starter serveren op og lytter på port 8080
 app.listen(8080);
+
+// when we start the server the functions are not executet

@@ -3,8 +3,8 @@
 // --------------------------------------
 // Exercise 1 - Console and constants
 
-const firstName = "Anders";
-const lastName = "Latif";
+const firstName = "Sebastian";
+const lastName = "Rasmussen";
 
 // EXERCISE
 // show in the console

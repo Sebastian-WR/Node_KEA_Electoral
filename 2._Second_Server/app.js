@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
 let today = new Date();
 
 // months obj containing the number and name of the monnth
+// kan også gøres uden 1, 2 og 3 osv bare med måneder så tager den det tal den får som index nummer
 const months = {
     1: "January",
     2: "February",
