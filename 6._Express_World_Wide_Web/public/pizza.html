@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="6;url=/" />-->
+    <style>
+        body {
+            background-color: pink;
+        }
+    </style>
+    <title>Pizza Page</title>
+</head>
+<body>
+    <h1>Here we like pizza!</h1>
+    <button><a href="/">Home</a></button>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = "/" // redirecter til root / efter 6 sekunder ?query=i was affraid kan tilføjes for at skrive noget i URL
+        }, 6000);
+    </script> 
+</body>
+</html>
+<!--Server side redirection er endpoinht til andet endpoint i backend-->

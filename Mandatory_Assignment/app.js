@@ -8,8 +8,8 @@ app.get("/", (req, res) => {
     res.sendFile(path + 'index.html');
 });
 
-app.get("/:id", (req, res) => {
-    res.send();
+app.get("/index2.html", (req, res) => {
+    res.sendFile(path + 'index2.html');
 });
 
 app.post("/", (req, res) => {
