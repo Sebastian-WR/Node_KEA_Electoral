@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <style>
+      .box {
+        cursor: pointer;
+      }
+      .box:hover {
+        opacity: 50%;
+      }
+      .code {
+        font-family: monospace;
+
+        font-size: large;
+      }
+    </style>
+    <title>Datatypes</title>
+  </head>
+
+  <!--Navbar from bootstrap-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Node.js</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Dropdown Subjects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/express">Express</a></li>
+              <li><a class="dropdown-item" href="/obj_variables">Datatypes</a></li>
+              <li><a class="dropdown-item" href="/functions_loops">Functions & Loops</a></li>
+              <li><a class="dropdown-item" href="/terminal_commands">Terminal Commands</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Jumbotron for underneath the navbar from bootstrap-->
+  <div
+    class="jumbotron jumbotron-fluid"
+    style="background-color: rgb(233, 233, 233)"
+  >
+    <div class="container">
+      <h1 class="display-3">Node.js</h1>
+      <p class="lead">What i've learned so far <span style="font-style: italic;">- updated continuously</span></p>
+    </div>
+  </div>
+
+  <!-- Containter from bootstrap for dokumentation -->
+  <body>
+    <main role="main" class="container" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="text-light p-5 bg-dark rounded mb-4">
+        <h1>Primitive JavaScript Datatypes & Structure Types</h1>
+        <p>
+          JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particluar value type,
+           and any variable can be assigned and re-assigned as values of all types.
+        </p>
+        <p class="code">let numberOne = 1;</p>
+        <p class="code">numberOne = "Number One";</p>
+        <dt>Primitive Datatypes</dt>
+        <dl> A primitive datatype is data that is not an object and has no methods. All primitives are immutable and cannot be altered. <br> In example:</dl>
+        <p class="code">
+          let bar = "baz"; <br>
+          bar.toUpperCase(); <br>
+          console.log(bar); // will return baz, because it is immutable and can not be altered. <br>
+          bar = bar.toUpperCase(); <br>
+          console.log(bar); // will return BAZ, because it is assigned a new value so it can be replaced but not altered.
+        </p>
+        <dt>There are seven data types in JavaScript, that are considered primitive.</dt>
+        <ul>
+          <li>Undefined</li>
+          <li>Boolean</li>
+          <li>Number</li>
+          <li>String</li>
+          <li>BigInt</li>
+          <li>Symbol </li>
+          <li>Null</li>
+        </ul>
+        <p>They can be declared with different declarators & they are all hoisted to the top of their scope, meaning they can be used before they are declared</p>
+        <p class="code">
+          var numberOne = 1;
+          <ul><li>var declarations are globally scope or function scoped, their variables can be updated and re-declared within its scope. var can be declared without being initialized.</li></ul>
+        </p>
+        <p class="code">
+          let numberTwo = "2";
+          <ul><li>let is block scoped, let variables can be updated but not re-declared. let can be declared without being initialized.</li></ul>
+        </p>
+        <p class="code">
+          const numberThree = "Three";
+          <ul><li>const is block scoped, ocnst variables can neither be updated nor re-declared, const must be initialized during declaration.</li></ul>
+        </p>
+        <dt>Then to the structural types</dt>
+        <dl>All the structural types are derived from Object, therfore they are all objects and have methods assigned to them,
+           which we can use to manipulate the datastructures as we need. Almost everything made with the new keyword is a data structure.<br> Underneath i've listed some.
+        </dl>
+        <dt>Structural types</dt>
+        <ul>
+          <li>Object</li>
+          <ul><li>Objects can be seen as a collection of properties, which can be added or removed. Properties can be any type. It is also seen as a mapping between keys and values.
+            <p class="code">
+              const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue", ugly: true};
+              console.log(person.firstName); // output = John
+            </p>
+          </li></ul>
+          <li>Array</li>
+          <ul><li>Arrays are data-structures that comes with a set of methods to manipulate the data it can contain on each index it is perfect to represent a list of something.
+             It can hold a variety of data types.
+            some of the methods are:
+            <p class="code"> <br>
+            indexOf(); // which will take a parameter and look through the array for a match and return the index of its first occurance.
+            push(); & pop(); // Are used to add or remove data, at the end of an array. <br>
+            const months = ['Jan', 'March', 'April', 'June']; <br>
+            months.splice(1, 0, 'Feb'); // inserts at index 1 if the 0 was a 1 it would remove 1 from the position given and add the "Feb". <br>
+            console.log(months[1]); // will print "March" 
+            </p>
+          </li></ul>
+          <li>Map - to be learned</li>
+          <li>Set - to be learned</li>
+          <li>Date</li>
+          <ul><li>Date is an data-structure to which you can manipulate with a set of methods. Options to set and get various parts of time and dates.  
+            <p class="code">  <br>
+              const today = new Date(); // creates a new Date object. <br>
+              const dayDate = (today.toLocaleString('en-DK', { day: 'numeric' })); // declares a variable that contains the day of the month in number format. <br>
+              const month = (today.toLocaleString('en-DK', { month: 'long' })); // month in string format <br>
+              const time = (today.toLocaleTimeString('en-DK')); // time in 00:00:00 format <br>
+              const day = (today.toLocaleString('en-DK', { weekday: 'long' })); // day as Friday in string <br>
+              <a onclick="location.href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date'"><button>More methods here</button></a>
+            </p>
+          </li></ul>
+        </ul>
+      </div>
+    </main>
+
+    <!-- Bootstrap footer -->
+    <footer class="bg-dark text-center text-white">  
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright: Sebastian Wulff Rasmussen - KEA
+        <a style="cursor: pointer; padding-left: 5px;" onclick="location.href='https://www.linkedin.com/in/sebastian-wulff-rasmussen-1215571b2/'" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"> 
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Bootsrap script bundle-->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"
+  ></script>
+
+  </body>
+</html>
