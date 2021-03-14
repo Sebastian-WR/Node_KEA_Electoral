@@ -5,8 +5,9 @@
 function myFirstFunction() { // Function declaration
     return "Hello world, what's up!";
 }
-const returnValue = myFirstFunction();
 
+console.log(myFirstFunction());
+const returnValue = myFirstFunction();
 console.log(returnValue);
 
 const myVariableFunction = function(/* Der kan være parametrer her*/) { // function with no name = anonymous function variablen bliver functionnavnet som kaldes på den er ikke hoisted variabler er ikke hoisted, medmindre de er i scope{}

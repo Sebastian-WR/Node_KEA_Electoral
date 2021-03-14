@@ -22,6 +22,19 @@
 
         font-size: large;
       }
+      .tab {
+        margin-left: 40px;
+      }
+      .doubleTab {
+        margin-left: 80px;
+      }
+      dt {
+        font-size: x-large;
+      }
+      .dlUnderHeadline {
+        font-size: large;
+        font-weight: bold;
+      }
     </style>
     <title>Functions & Loops</title>
   </head>
@@ -61,7 +74,7 @@
             <li><a class="dropdown-item" href="/express">Express</a></li>
             <li><a class="dropdown-item" href="/obj_variables">Datatypes</a></li>
             <li><a class="dropdown-item" href="/functions_loops">Functions & Loops</a></li>
-            <li><a class="dropdown-item" href="/terminal_commands">Terminal Commands</a></li>
+            <li><a class="dropdown-item" href="/terminal">Terminal Commands</a></li>
           </ul>
         </li>
       </ul>
@@ -76,7 +89,7 @@
 >
   <div class="container">
     <h1 class="display-3">Node.js</h1>
-    <p class="lead">What i've learned so far<span style="font-style: italic;">- updated continuously</span></p>
+    <p class="lead">What i've learned so far<span style="font-style: italic;"> - updated continuously</span></p>
   </div>
 </div>
 
@@ -84,15 +97,99 @@
     <main role="main" class="container" style="padding-top: 5rem; padding-bottom: 5rem;">
       <div class="text-light p-5 bg-dark rounded mb-4">
         <h1>Functions & Loops</h1>
-
         <p>
-          This documentation will explain what I have learned about primary
-          datatypes and objects in JavaScript.
+          Here i will give my own dokumentation on various function types and loops in in JavaScript,<br> that i've worked with so far.
         </p>
+        <dt>Functions</dt>
+        <dl>A JavaScript function is a block of code designed to perform a particular task. <br>
+        It is executed when something invokes it (calls it). <br>
+        Underneath is an example of e very simple function declaration that returns a string. <br>
+        its is afterwards logged and then assigned to a variable and the variable is logged. <br>
+        You can even declare a variable in fornt of the function declaration and assign it right away with = <br> They will all return "Hello world, what's up!</dl>
+        <p class="code">
+          function myFirstFunction() { <br>
+           <span class="tab">return "Hello world, what's up!";</span> <br>
+        }  <br>
+        
+        console.log(myFirstFunction()); <br>
+        const returnValue = myFirstFunction(); <br>
+        console.log(returnValue);
+        </p>
+        <dl>You can make the function do many things and take parameters, this one takes to parameters and will return them mulitplied.</dl>
+        <p class="code">
+          function myMultiply(p1, p2) { <br>
+           <span class="tab">return p1 * p2; </span> <br>
+          }
+        </p>
+        <dt>Arrow Functions</dt>
+        <dl>An arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations. <br>
+        More on their differences <a style="cursor: pointer;" onclick="location.href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions'">->here<-</a> <br>
+        underneath is an arrow function</dl>
+        <p class="code">
+          const myArrowFunction = () => {<br>
+           <span class="tab">console.log("Hello from the anonymous function which is also an arrow function");</span> <br>
+        } <br>
+        myArrowFunction();
+        </p>
+        <dt>Callback Functions</dt>
+        <dl>A callback is a function that we pass as an argument in another function. <br>
+        Follow the example below.</dl>
+        <p class="code">
+          function sayHiLater(anyFunctionReference) { <br>
+           <span class="tab">// simulate some code running</span> <br>
+           <span class="tab">// ... 5 seconds later ....</span> <br>
+           <spa class="tab">anyFunctionReference();</span>  <br>
+        } <br> <br>
+        
+        function hiFunction () { <br>
+           <span class="tab">console.log("Hi!");</span> <br>
+        } <br> <br>
+        
+        sayHiLater(hiFunction); // returns "Hi!"
+        </p>
+        <dl>Here you can se that the callback is the function in the parameter so the method that takes the function can run code and then use the other function later on. <br>
+          that is what's called a callback function.
+        </dl>
+        <dt>Loops</dt>
+        <dl>Loops offer a quick and easy way to do something repeatedly. It is a way of iteration through data structures like arrays, lists, et cetera. <br></dl>
+        <dl class="dlUnderHeadline">Traditional loops:</dl>
+        <ul>
+          <li>For loop --- Loops a fixed number of times</li>
+          <li>For each loop --- Loops through th whole thing</li>
+          <li>While loop --- Loops as long as condition is true</li>
+          <li>Do while loop --- Loops as long as condition is true</li>
+        </ul>
+        <dl>Here are the syntax for the listed loops in the same order:</dl>
+        <p class="code">
+          for (let index = 0; index < array.length; index++) { <br>
+           <span class="tab">// ... some code ...</span> <br>
+          } <br> <br>
 
-        <p class="code">const firstName = "Cecilie";</p>
+          array.forEach(element => { <br>
+            <span class="tab">// ... some code ...</span> <br>
+          }); <br> <br>
 
-        <p class="code">const lastName = "Brandt";</p>
+          while (condition) { <br>
+            <span class="tab">// ... some code ...</span> <br> 
+          } <br> <br>
+
+          do { <br>
+            <span class="tab">// ... some code ...</span> <br> 
+          } while (condition); 
+        </p>
+        <dl class="dlUnderHeadline">Alternative Loops</dl>
+        <ul>
+          <li>Map --- Returns an array with the same lenght</li>
+          <li>Filter --- Returns an array with less after filtering</li>
+          <li>Find --- Returns the first item in an array thatsatisfies a condition</li>
+        </ul>
+        <dl>Here are the syntax for the listed loops in the same order:</dl>
+        <p class="code">
+          const failures = ["misclick", "falling", "tiktok", "Christopher"]; <br> <br>
+          const failuresCopy1 = failures.map((failure, index) => console.log(failure, index));<br> <br>
+          const failuresCopy2 = failures.find((failure) => failure === 'tiktok'); <br> <br>
+          const failuresCopy3 = failures.filter((failure) => failure === 'tiktok').shift();
+        </p>
       </div>
     </main>
 
@@ -100,7 +197,7 @@
     <footer class="bg-dark text-center text-white">  
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2021 Copyright: Sebastian Wulff Rasmussen - KEA
-        <a style="cursor: pointer; padding-left: 5px;" onclick="location.href='https://www.linkedin.com/in/sebastian-wulff-rasmussen-1215571b2/'" >
+        <a style="cursor: pointer; padding-left: 5px;" title="Check out my Linkedin!" onclick="location.href='https://www.linkedin.com/in/sebastian-wulff-rasmussen/'" >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16"> 
             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
           </svg>
