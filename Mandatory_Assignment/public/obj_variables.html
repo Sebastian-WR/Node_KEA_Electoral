@@ -31,6 +31,26 @@
       dt {
         font-size: x-large;
       }
+      #footer {
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: fixed;
+        margin-bottom: 0;
+      }
+      pre {
+        display: block;
+        padding: 9.5px;
+        margin: 0 0 10px;
+        font-size: 13px;
+        line-height: 1.42857143;
+        color: #333;
+        word-break: break-all;
+        word-wrap: break-word;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
     </style>
     <title>Datatypes</title>
   </head>
@@ -98,17 +118,17 @@
           JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particluar value type,
            and any variable can be assigned and re-assigned as values of all types.
         </p>
-        <p class="code">let numberOne = 1;</p>
+        <pre class="code">let numberOne = 1;</pre>
         <p class="code">numberOne = "Number One";</p>
         <dt>Primitive Datatypes</dt>
         <dl> A primitive datatype is data that is not an object and has no methods. All primitives are immutable and cannot be altered. <br> In example:</dl>
-        <p class="code">
+        <pre class="code">
           let bar = "baz"; <br>
           bar.toUpperCase(); <br>
           console.log(bar); // will return baz, because it is immutable and can not be altered. <br>
           bar = bar.toUpperCase(); <br>
           console.log(bar); // will return BAZ, because it is assigned a new value so it can be replaced but not altered.
-        </p>
+        </pre>
         <dt>There are seven data types in JavaScript, that are considered primitive.</dt>
         <ul>
           <li>Undefined</li>
@@ -175,7 +195,7 @@
     </main>
 
     <!-- Bootstrap footer -->
-    <footer class="bg-dark text-center text-white">  
+    <footer class="bg-dark text-center text-white" id="footer">  
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2021 Copyright: Sebastian Wulff Rasmussen - KEA
         <a style="cursor: pointer; padding-left: 5px;" title="Check out my Linkedin!" onclick="location.href='https://www.linkedin.com/in/sebastian-wulff-rasmussen/'" >
